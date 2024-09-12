@@ -1,2 +1,2 @@
 # JSRetraining
-a repo for the course
+a repo for the course :)

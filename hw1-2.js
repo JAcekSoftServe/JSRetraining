@@ -30,7 +30,7 @@ console.log(first);
 alert(first + ' ' + second);
 
 //2
-console.log("Aumueller");
+console.log("Wichura");
 
 //5
 let isAdult = confirm("Are you 18 or above?");

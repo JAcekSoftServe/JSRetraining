@@ -103,10 +103,11 @@
 let currentTime = new Date();
 let currentHour = currentTime.getHours();
 
+//let currentHour = 23;
 console.log(currentTime);
 console.log(currentHour);
 
-if(currentHour >= 23 && currentHour < 5) {
+if(currentHour >= 23 && currentHour < 24 || currentHour >= 0 && currentHour < 5) {
     alert("Good night");
 } else if (currentHour >=5 && currentHour < 11) {
     alert("Good morning");

@@ -1,105 +1,110 @@
-//1
+//************************** 1 *****************************
 
-// let x = 1;
-// let y = 2;
+let x = 1;
+let y = 2;
 
-// let res1 = String(x) + String(y);// Add the code, it is necessary to use the variables x and y
-// console.log(res1); // "12"
-// console.log( typeof res1); // "string"
+let res1 = String(x) + String(y);// Add the code, it is necessary to use the variables x and y can be done: "" + x + y
+console.log(res1); // "12"
+console.log( typeof res1); // "string"
 
-// let res2 = Boolean(x) + String(y);// Add code is required use variables x and y
-// console.log(res2); // "true2"
-// console.log( typeof res2); // "string"
+let res2 = Boolean(x) + String(y);// Add code is required use variables x and y; can be done: Boolean(x) + "" + y
+console.log(res2); // "true2"
+console.log( typeof res2); // "string"
 
-// let res3 = Boolean(x) || Boolean(y);// Add code is required use variables x and y
-// console.log(res3); // true
-// console.log( typeof res3); // " boolean "
-// // console.log(Boolean(x));
-// // console.log(Boolean(y));
+let res3 = Boolean(x) || Boolean(y); // Add code is required use variables x and y
+console.log(res3); // true
+console.log( typeof res3); // " boolean "
+// console.log(Boolean(x));
+// console.log(Boolean(y));
 
-// let res4 = String(x) * y *"abc"; // Add code is required use variables x and y (chaniging x to String was not enough)
-// console.log(res4); // NaN
-// console.log( typeof res4); // "number"
+let res4 = String(x) * y * "abc"; // Add code is required use variables x and y (chaniging x to String was not enough) - 
+//can be done: parseFloat(Boolean(x))
+console.log(res4); // NaN
+console.log( typeof res4); // "number"
 
-//2
+//******************************************* 2 *****************************************
 
-// let userNumber = prompt("Enter chosen number");
+let userNumber = +prompt("Enter chosen number");
 
-// //a
-// if(userNumber >= 0) {
-//     console.log("The Number is positive");
-// } else {
-//     console.log("The number is negative");
-// }
+//a
+if(userNumber >= 0) {
+    console.log("The Number is positive");
+} else {
+    console.log("The number is negative");
+}
 
-// //b
-// if(userNumber % 7 === 0) {
-//     console.log("The number is a multiple of 7")
-// } else {
-//     console.log("The number is not a multiple of 7")
-// }
+if(userNumber % 2 === 0 && userNumber >0) {
+    //code here : paired positive
+}
 
-//3
-// const NewArray = [];
-// let userEntry = prompt("Enter any value:");
+//b
+if(userNumber % 7 === 0) {
+    console.log("The number is a multiple of 7")
+} else {
+    console.log("The number is not a multiple of 7")
+}
 
-// NewArray.push(7);
-// NewArray.push("A string");
-// NewArray.push(true);
-// NewArray.push(null);
-// NewArray.push(userEntry);
+// ****************************** 3 *************************************
+const NewArray = [];
+let userEntry = prompt("Enter any value:"); //could be done: NewArray[4] = prompt("enter a new value")
 
-// alert("Array length is: " + NewArray.length);
-// alert("Users entry = " + NewArray[4]);
+NewArray.push(7);
+NewArray.push("A string");
+NewArray.push(true);
+NewArray.push(null);
+NewArray.push(userEntry);
 
-// NewArray.shift();
+alert("Array length is: " + NewArray.length);
+alert("Users entry = " + NewArray[4]);
 
-// console.log(NewArray);
+NewArray.shift();
 
-//4
+console.log(NewArray);
 
-// let cities = [" Rome ", " Lviv ", " Warsaw "];
-// let ribbon = cities.join("*");
+// ******************************** 4 *********************************
 
-// console.log(ribbon);
+let cities = [" Rome ", " Lviv ", " Warsaw "];
+let ribbon = cities.join("*");
 
-//5
-// let isAdult = prompt("Enter you age: ");
+console.log(ribbon);
 
-// if(isAdult >= 18) {
-//     alert("You have reached the age of majority");
-// } else {
-//     alert("You are still too young");
-// }
+// ***************************** 5 *********************************
+let isAdult = Number(prompt("Enter you age: "));
 
-//6
-// let triangleDim = [];
+if(isAdult >= 18) {
+    alert("You have reached the age of majority");
+} else {
+    alert("You are still too young");
+}
 
-// alert("In next steps enter lenghts of a trangle");
-// let a = parseFloat(prompt("Enter value a:"));
-// let b = parseFloat(prompt("Enter value b:"));
-// let c = parseFloat(prompt("Enter value c:"));
+// ********************************* 6 *********************************
+let triangleDim = [];
 
-// triangleDim.push(a, b, c);
-// console.log(triangleDim);
+alert("In next steps enter lenghts of a trangle");
+let a = parseFloat(prompt("Enter value a:"));
+let b = parseFloat(prompt("Enter value b:"));
+let c = parseFloat(prompt("Enter value c:"));
 
-// function checkArrayTypes(array) {
-//   array.forEach((element) => {
-//       if (typeof element !== 'number') {
-//           alert("Incorrect data");
-//       }
-//   });
-// }
+triangleDim.push(a, b, c);
+console.log(triangleDim);
 
-// checkArrayTypes(triangleDim); // I get NaN as result, not "Incorrect data" --need to invstigate this, another check shuold be also done: if a + b > c || a + c > b || b + c > a (if not: "Not a triangle")
+function checkArrayTypes(array) {
+  array.forEach((element) => {
+      if (typeof element !== 'number') {
+          alert("Incorrect data");
+      }
+  });
+}
 
-// let semiParameter = (a +b +c)/2
-// console.log(semiParameter)
-// let triangleArea = Math.sqrt(semiParameter * (semiParameter - a) * (semiParameter - b) * (semiParameter - c));
-// let roundedArea = triangleArea.toFixed(3)
-// alert(roundedArea);
+checkArrayTypes(triangleDim); // I get NaN as result, not "Incorrect data" --need to invstigate this, another check shuold be also done: if a + b > c || a + c > b || b + c > a (if not: "Not a triangle")
 
-//7
+let semiParameter = (a +b +c)/2
+console.log(semiParameter)
+let triangleArea = Math.sqrt(semiParameter * (semiParameter - a) * (semiParameter - b) * (semiParameter - c));
+let roundedArea = triangleArea.toFixed(3)
+alert(roundedArea);
+
+// ****************************** 7 ****************************
 let currentTime = new Date();
 let currentHour = currentTime.getHours();
 
@@ -116,3 +121,5 @@ if(currentHour >= 23 && currentHour < 24 || currentHour >= 0 && currentHour < 5)
 } else if (currentHour >= 17 && currentHour < 23) {
     alert("Good evening");
 }
+
+//add case solution here

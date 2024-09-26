@@ -1,102 +1,102 @@
 // //********************** 1 ************************
 
-// let userInput = prompt("Enter coma separated width and height of an rectangle:")
+let userInput = prompt("Enter coma separated width and height of an rectangle:")
 
-// const dimensions = userInput.split(",").map(Number);
+const dimensions = userInput.split(",").map(Number);
 
-// //console.log(dimensions);
+//console.log(dimensions);
 
-// // for (i = 0; i < dimensions.length; i++) {
-// //     console.log(typeof dimensions[i]);
-// // }
-
-// //console.log(dimensions.length);
-
-// let area;
-
-// function calcRectangleArea(width, height) {
-//     // if (dimensions.length === 0) {
-//     //     throw new Error ("No data entered!")
-//     // }
-
-//     if (dimensions.length > 2 || dimensions.length < 2) {
-//         throw new Error ("Enter only 2 dmiensions!");
-//     }
-
-//     for (i = 0; i < dimensions.length; i++) {
-//         if (isNaN(dimensions[i])){
-//             throw new Error("Input is not a number!"); 
-//         }
-//     }
-
-//     return width * height;
+// for (i = 0; i < dimensions.length; i++) {
+//     console.log(typeof dimensions[i]);
 // }
 
-//     try{
-//         area = calcRectangleArea(dimensions[0], dimensions[1]);
-//         alert(area);
-//     }catch (error) {
-//         console.log(error);
-//     }
+//console.log(dimensions.length);
+
+let area;
+
+function calcRectangleArea(width, height) {
+    // if (dimensions.length === 0) {
+    //     throw new Error ("No data entered!")
+    // }
+
+    if (dimensions.length > 2 || dimensions.length < 2) {
+        throw new Error ("Enter only 2 dmiensions!");
+    }
+
+    for (i = 0; i < dimensions.length; i++) {
+        if (isNaN(dimensions[i])){
+            throw new Error("Input is not a number!"); 
+        }
+    }
+
+    return width * height;
+}
+
+    try{
+        area = calcRectangleArea(dimensions[0], dimensions[1]);
+        alert(area);
+    }catch (error) {
+        console.log(error);
+    }
 
 
 
 // //********************** 2 ***********************
 
-// function checkAge(age) {
-//     try{
-//       if(age.length === 0 || age == 0){
-// //        if(age === null || age.trim() === "")
-// //        if(age == ""){
-//             throw new Error ("The field is empty! Please enter your age");
-//         }else if(isNaN(age)) {
-//             throw new TypeError ("Input is not a number!");
-//         }else if(age < 14) {
-//             throw new RangeError ("Your age is below 14");
-//         }
-//         alert("You have access to watch the movie!")
+function checkAge(age) {
+    try{
+      if(age.length === 0 || age == 0){
+//        if(age === null || age.trim() === "")
+//        if(age == ""){
+            throw new Error ("The field is empty! Please enter your age");
+        }else if(isNaN(age)) {
+            throw new TypeError ("Input is not a number!");
+        }else if(age < 14) {
+            throw new RangeError ("Your age is below 14");
+        }
+        alert("You have access to watch the movie!")
         
 
-//     }catch (error){
-//         console.log(error.name);
-//         console.log(error.message);
-//     }
-// }
+    }catch (error){
+        console.log(error.name);
+        console.log(error.message);
+    }
+}
 
-// let age = +prompt("What's your age?"); // this causes null = 0
-// checkAge(age);
+let age = +prompt("What's your age?"); // this causes null = 0
+checkAge(age);
 
 //*********************** 3 ***************************** */
 
-// const months = ["January", "February", "March", "Apriol", "May", "June", "July", "August", "September", "October", "November", "December"]
+const months = ["January", "February", "March", "Apriol", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-// class MonthException extends Error {
-//     constructor(message){
-//         super(message);
-//         this.name = "MonthException";
-//     }
-// }
+class MonthException extends Error {
+    constructor(message){
+        super(message);
+        this.name = "MonthException";
+    }
+}
 
-// function showMonthName(month) {
-//     try{
-//         if(month < 1 || month > 12){
-//             throw new MonthException("Incorrect month number! Write number between 1 - 12");
-//         }else if(isNaN(month)){
-//             throw new Error ("Incorrect data");
-//         }//else if(months[month] !== undefined){
-//         //     return months[month];
-//         // }
+function showMonthName(month) {
+    try{
+        if(month < 1 || month > 12){
+            throw new MonthException("Incorrect month number! Write number between 1 - 12");
+        }else if(isNaN(month)){
+            throw new Error ("Incorrect data");
+        }//else if(months[month] !== undefined){
+        //     return months[month];
+        // }
         
-//         alert(`Given month is: ${months[num - 1]}`);
+        alert(`Given month is: ${months[num - 1]}`);
         
-//     }catch(error){
-//         console.error(error.name, error.message);
-//         // console.log(error.message);
-//     }
-// }
+    }catch(error){
+        console.error(error.name, error.message);
+        // console.log(error.message);
+    }
+}
 
-// let num = +prompt("Choose monht number");
-// showMonthName(num);
+let num = +prompt("Choose monht number");
+showMonthName(num);
 
 // **************************** 4 *******************************
 

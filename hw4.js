@@ -1,4 +1,4 @@
-//********************** 1 ************************
+// //********************** 1 ************************
 
 // let userInput = prompt("Enter coma separated width and height of an rectangle:")
 
@@ -32,23 +32,30 @@
 //     return width * height;
 // }
 
-// area = calcRectangleArea(dimensions[0], dimensions[1]);
+//     try{
+//         area = calcRectangleArea(dimensions[0], dimensions[1]);
+//         alert(area);
+//     }catch (error) {
+//         console.log(error);
+//     }
 
-// alert(area);
 
-//********************** 2 ***********************
+
+// //********************** 2 ***********************
 
 // function checkAge(age) {
 //     try{
-//         if(age.length === 0 || age == 0){
+//       if(age.length === 0 || age == 0){
+// //        if(age === null || age.trim() === "")
+// //        if(age == ""){
 //             throw new Error ("The field is empty! Please enter your age");
 //         }else if(isNaN(age)) {
-//             throw new Error ("Input is not a number!");
+//             throw new TypeError ("Input is not a number!");
 //         }else if(age < 14) {
-//             throw new Error ("Your age is below 14");
-//         }else{
-//             alert("You have access to watch the movie!")
+//             throw new RangeError ("Your age is below 14");
 //         }
+//         alert("You have access to watch the movie!")
+        
 
 //     }catch (error){
 //         console.log(error.name);
@@ -56,7 +63,7 @@
 //     }
 // }
 
-// let age = +prompt("What's your age?");
+// let age = +prompt("What's your age?"); // this causes null = 0
 // checkAge(age);
 
 //*********************** 3 ***************************** */
@@ -76,12 +83,15 @@
 //             throw new MonthException("Incorrect month number! Write number between 1 - 12");
 //         }else if(isNaN(month)){
 //             throw new Error ("Incorrect data");
-//         }else{
-//             alert(`Given month is: ${months[num - 1]}`);
-//         }
+//         }//else if(months[month] !== undefined){
+//         //     return months[month];
+//         // }
+        
+//         alert(`Given month is: ${months[num - 1]}`);
+        
 //     }catch(error){
-//         console.log(error.name);
-//         console.log(error.message);
+//         console.error(error.name, error.message);
+//         // console.log(error.message);
 //     }
 // }
 
@@ -172,53 +182,53 @@
 
 //solution 3
 
-let users = [];
+// let users = [];
 
-class User {
-    constructor(id){
-        this.id = id;
-    }
-}
+// class User {
+//     constructor(id){
+//         this.id = id;
+//     }
+// }
 
-function showUser(id) {
-    if (id < 0){
-        throw new Error (`ID must not be negative ${id}`);
-    }
+// function showUser(id) {
+//     if (id < 0){
+//         throw new Error (`ID must not be negative ${id}`);
+//     }
 
-    if (isNaN(id)){
-        throw new Error ("Wrong data format! Enter a number");
-    }
+//     if (isNaN(id)){
+//         throw new Error ("Wrong data format! Enter a number");
+//     }
 
-    console.log(user)
+//     console.log(user)
 
-}
+// }
 
-function showUsers(ids) {
+// function showUsers(ids) {
 
-    let results = [];
-    users.forEach(id => {
-        try{
-            let user = showUser(id);
-            results.push(user.id);
-        }catch(error){
-            throw new Error("Something went wrong!")
-        }
-    })
-}
+//     let results = [];
+//     ids.forEach(id => {
+//         try{
+//             let user = showUser(id);
+//             results.push(user.id);
+//         }catch(error){
+//             throw new Error("Something went wrong!")
+//         }
+//     })
+// }
 
 
-const userInput = prompt("Enter coma separated Users' IDs:")
-let ids = userInput.split(',').map(id => id.trim());
+// const userInputIds = prompt("Enter coma separated Users' IDs:")
+// let ids = userInputIds.split(',').map(id => id.trim());
 
-console.log(ids);
+// console.log(ids);
 
-for (i = 0; i < ids.length; i++){
-    const newUser = new User(ids[i]);
-    users.push(newUser[i]);
-    showUsers(ids[i]);
-}
+// for (i = 0; i < ids.length; i++){
+//     const newUser = new User(ids[i]);
+//     users.push(newUser[i]);
+//     showUsers(ids[i]);
+// }
 
-console.log(users);
+// console.log(users);
 
 //user.id = +prompt("Enter User's ID:");
 //users = showUsers(ids);
@@ -230,3 +240,34 @@ console.log(users);
 // console.log(results);
 
 //this one also doesn't work :/
+
+//solution from meeting
+
+function showUser(id) {
+    if (id < 0) {
+        throw new Error('ID must not be negative: ' + id)
+    }
+    return { id }; //{ id: id }
+
+}
+
+function showUsers(ids) {
+    let result = [];
+    ids.forEach(function (id) {
+        try {
+            let user = showUser(id);
+            result.push(user);
+            //console.log(result);
+        }catch(exception) {
+            console.log(exception.message);
+        }
+    });
+    return result;
+}
+
+const userInputIds = prompt("Enter compa separated list of IDs:");
+const UserIds = userInputIds.split(",").map(id => id.trim());
+let theResult = showUsers(UserIds);
+
+// let theResult = showUsers([4, -2, 3]);
+console.log(theResult);

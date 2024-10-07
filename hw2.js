@@ -123,3 +123,17 @@ if(currentHour >= 23 && currentHour < 24 || currentHour >= 0 && currentHour < 5)
 }
 
 //add case solution here
+
+switch(currentHour){
+    case (currentHour >= 23 || currentHour < 5):
+        alert("Good night");
+        break;
+    case (currentHour >= 5 && currentHour < 11):
+        alert("Good morning");
+        break;
+    case (currentHour >= 11 && currentHour < 17):
+        alert("Good day");
+        break;
+    default:
+        alert("Good evening");
+}

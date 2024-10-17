@@ -1,7 +1,7 @@
 // *********************** 1 ******************
 
-let arr = ["Tom", "Sam", "Ray", "Bob"];
-let [ x, y , , ...z ] = arr ;
+const arr = ["Tom", "Sam", "Ray", "Bob"];
+const [ x, y , , ...z ] = arr ;
 
 console.log(x); // "Tom"
 console.log(y); // "Sam"
@@ -9,12 +9,17 @@ console.log(z); // [Bob]
 
 // ************************* 2 ********************
 
-let data = {
+const data = {
     names: ["Sam", "Tom", "Ray", "Bob"],
     ages: [20, 24, 22, 26],
     };
 
-let {names: [ ,name2, , name4], ages: [ , age2, , age4]} = data;
+const {names: [ ,name2, , name4], ages: [ , age2, , age4]} = data;
+
+//can be done:
+// const {names, ages} = data;
+// const [name1, name2....]
+// const [age1, age2....]
 
 console.log(name2); // "Tom"
 console.log(age2); // 24
@@ -53,9 +58,9 @@ let client = {
         },
 
     notification() {
-          return (callback) => {
+          return (callback => {
              this .result = callback();
-        };
+        });
     }
 };
 
@@ -65,22 +70,23 @@ console.log( typeof client.result ); // "string"
 
 // ******************************** 5 ********************************
 
-function mapBuilder(keysArray, valuesArray) {
+const keys = [1, 2, 3, 4];
+const values = ["div", "span", "b", " i "];
+
+function mapBuilder(keys, values) {
     let map = new Map();
 
-    if (keysArray.length !== valuesArray.length) {
+    if (keys.length !== values.length) {
         throw new Error("Arrays must have the same length");
     }
 
     keys.forEach((key, index) => {
-        map.set(key, valuesArray[index].trim());
+        map.set(key, values[index].trim());
     })
 
     return map;
 };
 
-let keys = [1, 2, 3, 4];
-let values = ["div", "span", "b", " i "];
-let map = mapBuilder (keys, values);
+const map = mapBuilder (keys, values);
 console.log( map.size ); // 4
 console.log( map.get (2)); // "span"

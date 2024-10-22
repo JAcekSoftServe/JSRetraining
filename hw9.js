@@ -40,21 +40,21 @@ calcArrProduct ( [5,"user2", 7, 12]).then(result => console.log(result));
 
 // *************************************** 3 ********************************
 
-const delay = (i, time) => new Promise( resolve => setTimeout (() => resolve(i), time));
-function showNumbers ( ) {
-	// your code with using delay( i, time)
-    let promise = Promise.resolve();
+// const delay = (i, time) => new Promise( resolve => setTimeout (() => resolve(i), time));
+// function showNumbers ( ) {
+// 	// your code with using delay( i, time)
+//     let promise = Promise.resolve();
 
-    for(i=0; i<=10; i++){
-        const randomTime = Math.floor(Math.random() * 3000);
+//     for(i=0; i<=10; i++){
+//         const randomTime = Math.floor(Math.random() * 3000);
 
-        promise = promise.then(() => delay(i, randomTime)).then((value) => {
-            console.log(value);
-        })
-    }
-}
+//         promise = promise.then(() => delay(i, randomTime)).then((value) => {
+//             console.log(value);
+//         })
+//     }
+// }
 
-showNumbers();
+// showNumbers();
 
 // ***************************************************** 4 *********************************
 

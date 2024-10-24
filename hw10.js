@@ -9,7 +9,7 @@
 
 // let userName = os.userInfo().username;
 // let osType = os.type();
-// let sysWorkTime = os.uptime() / 60;
+// let sysWorkTime = (os.uptime()/60).toFixed(2);
 // let workDir = path.dirname(__dirname);
 // let fileName = path.basename(__filename);
 
@@ -49,8 +49,9 @@ console.log(name);
 console.log(time);
 
 http.createServer((request, response) => {
-    response.writeHead(200, "Content-Type: text/plain");
-    response.write(`Date of request ${time} /n Good day ${name}`);
+    response.writeHead(200, "Content-Type: text/html");
+    response.write(`Date of request ${time} <br>`);
+    response.write(`Good day ${name}`);
     response.end();
 }).listen(8000);
 

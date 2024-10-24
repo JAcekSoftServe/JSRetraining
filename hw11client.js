@@ -4,6 +4,7 @@
 
 function getMessage() {
     fetch("http://localhost:8000").then((result) => result.text())
+                           .then((result) => console.log(result))
                            .then((result) => {
                             document.getElementById("button").innerHTML = result
                         });

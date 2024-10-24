@@ -1,6 +1,8 @@
 const os = require("os");
 
-const userName = os.userName;
+const userName = os.userInfo().username;
+
+console.log(userName);
 
 function getCurrentDate() {
     const currentDate = new Date();
@@ -10,4 +12,4 @@ function getCurrentDate() {
 
 // console.log(getCurrentDate());
 
-export {userName, getCurrentDate}
+module.exports = {userName, getCurrentDate}

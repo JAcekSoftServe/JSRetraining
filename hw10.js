@@ -40,18 +40,19 @@
 
 // *********************************** 2 *************************************
 const http = require("http");
-const { userName, getCurrentDate } = require("./personal-module");
+const { userName, getCurrentDate, greetings } = require("./personal-module");
 
 let name = userName;
 let time = getCurrentDate();
+let message = greetings();
 
 console.log(name);
 console.log(time);
 
 http.createServer((request, response) => {
     response.writeHead(200, "Content-Type: text/html");
-    response.write(`Date of request ${time} <br>`);
-    response.write(`Good day ${name}`);
+    response.write(`<p>Date of request ${time} </p>`);
+    response.write(`<p>${message} ${name}.</p>`);
     response.end();
 }).listen(8000);
 

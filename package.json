@@ -1,11 +1,11 @@
 {
-  "name": "js-course-01",
+  "name": "jsretraining",
   "version": "1.0.0",
   "description": "a repo for the course :)",
   "main": "hw1-2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "JA",
+  "author": "",
   "license": "ISC"
 }

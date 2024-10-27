@@ -51,7 +51,7 @@ console.log(time);
 
 http.createServer((request, response) => {
     response.writeHead(200, "Content-Type: text/html");
-    response.write(`<p>Date of request ${time} </p>`);
+    response.write(`<p>Date of request: ${time} </p>`);
     response.write(`<p>${message} ${name}.</p>`);
     response.end();
 }).listen(8000);

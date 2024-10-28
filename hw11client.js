@@ -14,7 +14,7 @@ function getMessage() {
     fetch("http://localhost:8000", {
         mode: 'no-cors',
         headers: {
-            'Accept': 'tht/html'
+            'Accept': 'txt/html'
         }
     }).then(response => response.text())
       .then(text => {
@@ -22,5 +22,30 @@ function getMessage() {
         if(message){
             message.innerHTML = text;
         }
+    });
+}
+
+// ******************* task 2 *********************
+
+function fetchAuthors() {
+    fetch('/authors')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(authors => displayAuthors(authors))
+        .catch(error => console.error('Fetch error:', error));
+}
+
+function displayAuthors(authors) {
+    const authorsList = document.getElementById('authors-list');
+    authorsList.innerHTML = ''; // Clear previous list if any
+
+    authors.forEach(author => {
+        const listItem = document.createElement('li');
+        listItem.textContent = author.name;
+        authorsList.appendChild(listItem);
     });
 }

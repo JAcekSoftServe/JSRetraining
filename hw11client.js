@@ -17,13 +17,15 @@ function getMessage() {
             'Accept': 'txt/html'
         }
     }).then(response => response.text())
-      .then(text => {
-        const message = document.getElementById("button");
-        if(message){
-            message.innerHTML = text;
-        }
+      .then(text => {console.log(text);
+        // const message = document.getElementById("button");
+        // if(message){
+        //     message.innerHTML = text;
+        // }
     });
 }
+
+//try with json
 
 // ******************* task 2 *********************
 

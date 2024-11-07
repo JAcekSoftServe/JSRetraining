@@ -14,7 +14,7 @@ caseCheck("Upper case example");
 // *************************** 2 ******************************
 
 function checkEmail(email){
-    let regExp = (/^[\w\.]+@[\w\.]+\.[a-zA-z]{2,}$/);
+    let regExp = (/^\S+[-]?@\S+\.[a-zA-z]{2,3}$/);
     return regExp.test(email);
     
 }

@@ -23,6 +23,8 @@ console.log(checkEmail("email@domain.com"));
 console.log(checkEmail("other.email@dot.com"));
 console.log(checkEmail("another2.Compli_cated@email3.subdomain.com"));
 
+//try with \s not \w
+
 // ************************** 3 *************************
 
 console.log("cdbBdbsbz".match(/d+b+d?/gi));
@@ -36,7 +38,7 @@ console.log(inputString.replace(/(\w+)\s+(\w+)/, "$2, $1"));
 // ************************ 5 *************************************
 
 function checkCardNumber(cardNumber) {
-    if(cardNumber.match(/[\d]{4}\-[\d]{4}\-[\d]{4}\-[\d]{4}/)){
+    if(cardNumber.match(/^\d{4}\-\d{4}\-\d{4}\-\d{4}$/)){
         console.log("Card number is valid");
     }else{
         console.log("Card number is invalid")
@@ -53,7 +55,7 @@ let newEmail = prompt("enter your email:");
 
 function validateEmail(email){
     // console.log(newEmail);
-    let regExp2 = (/^[A-Za-z]{1}[\w\.\-]+@[\w]+\.[a-zA-Z]{2,}$/)
+    let regExp2 = (/^[A-Za-z0-9]+([-]?\w)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
     return regExp2.test(email);
 
 }
@@ -63,7 +65,7 @@ console.log("Email check: " + validateEmail(newEmail));
 // ******************************* 7 *****************************************
 
 function checkLogin(login) {
-    const loginRegex = (/^[a-zA-Z][a-zA-Z0-9\.]{1,9}$/);
+    const loginRegex = (/^[a-zA-Z]{1}[a-zA-Z\d\.]{1,9}$/);
     const isLoginValid = loginRegex.test(login);
 
     const numbers = login.match(/\d+(\.\d+)?/g);
@@ -80,3 +82,4 @@ function checkLogin(login) {
 
 checkLogin("ee1.1ret3");
 checkLogin ('ee1*1ret3');
+checkLogin('a');

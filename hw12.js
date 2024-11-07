@@ -63,7 +63,7 @@ console.log("Email check: " + validateEmail(newEmail));
 // ******************************* 7 *****************************************
 
 function checkLogin(login) {
-    const loginRegex = (/^[a-zA-Z][a-zA-Z0-9]{1,9}$/);
+    const loginRegex = (/^[a-zA-Z][a-zA-Z0-9\.]{1,9}$/);
     const isLoginValid = loginRegex.test(login);
 
     const numbers = login.match(/\d+(\.\d+)?/g);

@@ -13,10 +13,21 @@ function getCircleArea(radius) {
 }
     
 
-console.log(getCircleLength(22));
-console.log(getCircleArea(9));
-console.log(getCircleArea());
-console.log(getCircleLength());
+// console.log(getCircleLength(22));
+// console.log(getCircleArea(9));
+// console.log(getCircleArea());
+// console.log(getCircleLength());
+
+// ******************************** 4 *******************************************
+
+const food = [
+    { kind: 'potato', price: 10 },
+    { kind: 'bred', price: 16 },
+    { kind: 'pepper', price: 27 },
+    { kind: 'banana', price: 32 },
+    { kind: 'lemon', price: 50 }
+    ];
+    
 
 
-module.exports = { add, getCircleArea, getCircleLength };
+module.exports = { add, getCircleArea, getCircleLength, food };

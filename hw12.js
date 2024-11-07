@@ -58,7 +58,7 @@ function validateEmail(email){
 
 }
 
-console.log(validateEmail(newEmail));
+console.log("Email check: " + validateEmail(newEmail));
 
 // ******************************* 7 *****************************************
 
@@ -78,5 +78,5 @@ function checkLogin(login) {
 }
 
 
-checkLogin("ee 1.1 ret 3");
-checkLogin (' ee 1*1 ret 3');
+checkLogin("ee1.1ret3");
+checkLogin ('ee1*1ret3');

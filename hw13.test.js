@@ -1,4 +1,4 @@
-const { add, getCircleArea, getCircleLength } = require('./hw13');
+const { add, getCircleArea, getCircleLength, food } = require('./hw13');
 
 // ******************************* 1 *************************
 

@@ -1,4 +1,4 @@
-const { add, getCircleArea, getCircleLength, food } = require('./hw13');
+const { add, getCircleArea, getCircleLength, filterFoodPrice } = require('./hw13');
 
 // ******************************* 1 *************************
 
@@ -25,7 +25,7 @@ describe("Test given array", () => {
         expect(userList[userList.length - 1]).toBe("new_user_2");
     });
     test("Test the statement that the length of the array is 5", () => {
-        expect(userList.length).toBe(5);
+        expect(userList.length).toBe(5); //could be: toHaveLength(5)
     });
     test("Test the statement that the 3rd element of the array has type string", () => {
         expect(typeof userList[2]).toBe("string");
@@ -51,5 +51,35 @@ describe("Test circle length and area", () => {
     test("Test both functions with no arguments added", () => {
         expect(getCircleLength()).toBe(NaN);
         expect(getCircleArea()).toBe(NaN);
+    })
+})
+
+// ******************************* 4 ************************************
+
+const food = [
+    { kind: 'potato', price: 10 },
+    { kind: 'bread', price: 16 },
+    { kind: 'pepper', price: 27 },
+    { kind: 'banana', price: 32 },
+    { kind: 'lemon', price: 50 }
+    ];
+
+describe("Test food object for given parameters", () => {
+    const min = 12;
+    const max = 40;
+    const foodObject = filterFoodPrice(food, min, max);
+    
+    
+    test("Test food object", () => {
+        expect(foodObject.length).toBe(3);
+        expect(foodObject).toContainEqual({ kind: 'pepper', price: 27});
+        // expect(foodObject).toEqual(food[1] + food[2] + food[3]);
+        expect(foodObject).toEqual([{ kind: 'bread', price: 16 }, { kind: 'pepper', price: 27 }, { kind: 'banana', price: 32 }]);
+        expect(foodObject[0].price).toBeGreaterThan(min);
+        expect(foodObject[2].price).toBeLessThan(max);
+        expect(foodObject).not.toContainEqual({ kind: 'lemon', price: 50 });
+        expect(foodObject[1].price).toBe(27);
+        expect(foodObject).not.toBeNull();
+        expect(typeof foodObject).toBe("object");
     })
 })

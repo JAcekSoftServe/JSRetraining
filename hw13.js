@@ -20,14 +20,10 @@ function getCircleArea(radius) {
 
 // ******************************** 4 *******************************************
 
-const food = [
-    { kind: 'potato', price: 10 },
-    { kind: 'bred', price: 16 },
-    { kind: 'pepper', price: 27 },
-    { kind: 'banana', price: 32 },
-    { kind: 'lemon', price: 50 }
-    ];
-    
+function filterFoodPrice(food, min, max) {
+    return food.filter(element => element.price >= min && element.price <= max);
+}
+   
 
 
-module.exports = { add, getCircleArea, getCircleLength, food };
+module.exports = { add, getCircleArea, getCircleLength, filterFoodPrice };

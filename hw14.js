@@ -124,8 +124,12 @@ const {Builder, By, until, Actions} = require('selenium-webdriver');
         const scndTable = await driver.findElement(By.id('table2'));
         await driver.executeScript('arguments[0].scrollIntoView(true);', scndTable);
 
-        const dueHeader = await scndTable.findElement(By.xpath("//span[text()='Due']"));
-        await dueHeader.click();
+        const dueHeader = await scndTable.findElement(By.css('.dues'));
+        // await dueHeader.click();
+
+        await driver.actions().move({origin: dueHeader}).click().perform();
+
+        // await driver.wait(until.elementLocated(By.css("span.headerSortDown")), 5000);
 
         const dueCells = await scndTable.findElements(By.css('tbody tr td:nth-child(4)'));
 
